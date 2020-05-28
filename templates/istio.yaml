@@ -30,7 +30,7 @@ spec:
     - uri:
         exact: /{{.Values.endpoint}}
     rewrite:
-      uri: /color/index.html
+      uri: /
     route:
     - destination:
         host: {{.Values.primaryName}}
@@ -56,7 +56,7 @@ spec:
     - uri:
         exact: /{{.Values.stageEndpoint}}
     rewrite:
-      uri: /color/index.html
+      uri: /
     route:
     - destination:
         host: {{.Values.stageName}}
@@ -78,7 +78,7 @@ spec:
     - uri:
         exact: /{{.Values.primaryEndpoint}}
     rewrite:
-      uri: /color/index.html
+      uri: /
     route:
     - destination:
         host: {{.Values.primaryName}}
