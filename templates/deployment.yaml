@@ -28,7 +28,7 @@ spec:
         imagePullPolicy: Always
         readinessProbe:
           httpGet:
-            path: /color
+            path: /
             port: http
           initialDelaySeconds: 5
           periodSeconds: 5
