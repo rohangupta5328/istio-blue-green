@@ -9,10 +9,6 @@ primaryEndpoint: color-bg-primary
 replicas: 2
 namespace: ${infra.kubernetes.namespace}
 
-frontend:
-  title: Istio - Blue/Green
-  loadBalancer: ${serviceVariable.loadBalancer}
-  uiPath: ${serviceVariable.uiPath}
-  image: us.gcr.io/sales-209522/continuous-requests:110
+
 
 include: false
