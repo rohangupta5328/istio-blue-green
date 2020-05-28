@@ -1,0 +1,37 @@
+#
+# Service targeting primary
+#
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{.Values.primaryName}}
+  annotations:
+    harness.io/primary-service: true
+spec:
+  type: ClusterIP
+  ports:
+  - name: http
+    port: 9080
+    protocol: TCP
+    targetPort: http
+  selector:
+    app: {{.Values.name}}
+---
+#
+# Service targeting stage
+#
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{.Values.stageName}}
+  annotations:
+    harness.io/stage-service: true
+spec:
+  type: ClusterIP
+  ports:
+  - name: http
+    port: 9080
+    protocol: TCP
+    targetPort: http
+  selector:
+    app: {{.Values.name}}
